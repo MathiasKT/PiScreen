@@ -1,4 +1,5 @@
-1. add versions to setup script (line 6)
+1. add versions to setup script (line 6) -- done
+2. fork rpi-rgb-led-matrix -- done
 2. fix screen tearing for images 
-3. update default link, ask matthew
+3. update default link, ask 
 4. restructure to allow for videos?
