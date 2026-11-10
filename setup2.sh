@@ -2,7 +2,7 @@
 set -e
 
 echo "=== Installing System Dependencies ==="
-sudo apt update
+#sudo apt update
 sudo apt install -y chromium-browser python3-opencv python3-pil nodejs npm git python-dev-is-python3 cython3 python3-setuptools
 
 echo "=== Setting up Directories ==="

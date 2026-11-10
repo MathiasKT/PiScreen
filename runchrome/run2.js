@@ -2,12 +2,12 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
 
-//const TARGET_URL = 'https://flipclock.us';
-const TARGET_URL = 'http://192.168.2.1:10002/device/LED2/9415';
+const TARGET_URL = 'https://flipclock.us';
+//const TARGET_URL = 'http://192.168.2.1:10002/device/LED2/9415';
 const OUTPUT_DIR = '/home/ktl/screen-display-files';
 const CHECK_INTERVAL_MS = 1000; 
-const SCREEN_WIDTH = 768;
-const SCREEN_HEIGHT = 192;
+const SCREEN_WIDTH = 1280; //768;
+const SCREEN_HEIGHT = 960; //192;
 const FILES_TO_KEEP = 10;
 
 if (!fs.existsSync(OUTPUT_DIR)) {

@@ -7,8 +7,8 @@ from PIL import Image, ImageSequence
 from rgbmatrix import RGBMatrix, RGBMatrixOptions
 
 DISPLAY_FOLDER = "screen-display-files"
-#DIMS = [32, 64]
-DIMS = [64,128]
+DIMS = [32, 64]
+#DIMS = [64,128]
 
 options = RGBMatrixOptions()
 options.rows, options.cols = DIMS[0], DIMS[1]
@@ -17,11 +17,16 @@ options.disable_hardware_pulsing =True
 options.gpio_slowdown = 4
 options.drop_privileges = False
 options.chain_length =2
-#options.chain_length = 1
-#options.parallel = 1
-#options.brightness = 0 - 100
+options.parallel =3
+options.multiplexing = 0 #0 / 1/ 2
+
+options.pwm_bits =11
+options.pwm_lsb_nanoseconds =130
+options.brightness = 80
+options.show_refresh_rate = True
+options.limit_refresh_rate_hz = 64
+
 #options.scan_mode = 0 or 1 
-#options.multiplexing = 0 / 1/ 2
 
 matrix = RGBMatrix(options=options)
 
@@ -96,7 +101,7 @@ def play_media(path,prev_ctime):
 			new = get_newest_file()
 			if new != path or os.path.getctime(path) != prev_ctime:
 				return
-			time.sleep(1)
+			#time.sleep(1)
 
 def start():
 	#os.chdir("/home/ktl")	
@@ -113,14 +118,14 @@ def start():
 	
 				if newest_file != curr_file or newest_time != curr_play_time:
 					print(f"playing new file {newest_file}")
-					time.sleep(0.5)
+					#time.sleep(0.5)
 					check_file_ready(newest_file)
 					curr_file = newest_file
 					curr_play_time = os.path.getctime(newest_file)
 					#print("playing new file" )
 					play_media(curr_file, curr_play_time)
 			else:
-				time.sleep(1)
+				time.sleep(0.001)
 	except Exception as e:
 		# if downloading file to folder and  check_file fails 
 		print(f"error: {e}")
