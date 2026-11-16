@@ -7,7 +7,9 @@ NODE_PID=$!
 
 echo "Starting lcd screen display (double_buffering_auto_update.py)"
 cd /home/ktl || exit 1
-sudo python3 double_buffering_auto_update.py &
+#sudo python3 double_buffering_auto_update.py &
+sudo home/ktl/venv/bin/python3 double_buffering_auto_update.py &
+
 PYTHON_PID=$!
 
 
