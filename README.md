@@ -5,7 +5,13 @@ This project has 2 parts.
 
 # Prerequisites
 - A raspberry pi connected to a wifi network.
+- git installed
+
 
 # Setup
-1) run setup2.sh
+1) git clone repo
+2) make setup2.sh and start.sh executable ( chmod +x setup2.sh start.sh )
+2) run setup2.sh
 
+# Start
+1) run start.sh
