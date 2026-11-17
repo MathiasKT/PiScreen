@@ -2,7 +2,14 @@ const puppeteer = require('puppeteer');
 const fs = require('fs');
 const path = require('path');
 
-const TARGET_URL = 'https://flipclock.us';
+const TARGET_URL = process.argv[2];
+if (!TARGET_URL) {
+    console.error('Error: No target URL provided.');
+    const TARGET_URL = 'https://flipclock.us';
+
+}
+console.log(`Target URL: ${TARGET_URL}`);
+//const TARGET_URL = 'https://flipclock.us';
 //const TARGET_URL = 'http://192.168.2.1:10002/device/LED2/9415';
 const OUTPUT_DIR = '/home/ktl/screen-display-files';
 const CHECK_INTERVAL_MS = 1000; 
