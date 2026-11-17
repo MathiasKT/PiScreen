@@ -5,11 +5,9 @@ ADOPT_FILE="/home/ktl/ADOPT.url"
 if [ ! -f "$ADOPT_FILE" ]; then
     #not configured
     #display ip and error
-    cd /rpi-rgb-led-matrix/example-api-use/ || exit 1
-    IP=$(hostname -I | awk '{print $1}')
-
-    sudo ./scrolling-text-example -s 1 -f ../8x13.bdf "Awaiting connection, IP: $IP"
-fi
+    cd /home/ktl/rpi-rgb-led-matrix/examples-api-use/ || exit 1
+    IP=$(hostname -I | awk '{print $1}') 
+    sudo ./scrolling-text-example -s 1 -f ../8x13.bdf --led-cols 64 --led-rows 32 "Awaiting connection, IP: $IP"
 else 
     # configured
     # read url in ADOPT.url
@@ -40,7 +38,6 @@ else
     trap 'exit 0' INT TERM
 
     wait
-
-
+fi
 
 

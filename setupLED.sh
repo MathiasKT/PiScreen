@@ -39,7 +39,11 @@ echo "=== 7) Installing rgbmatrix into venv ==="
 echo "=== 8) Make startLED.sh executable ==="
 sudo chmod +x /home/ktl/PiScreen/startLED.sh
 
-echo "=== 9) Creating System services ==="
+echo "=== 9) Make rpi-rgb-led-matrix/examples-api-use/ file==="
+cd /home/ktl/rpi-rgb-led-matrix/examples-api-use/ || exit 1
+make 
+
+echo "=== 10) Creating System services ==="
 # After = network connected
 # Restart = restart on exit
 # StartLimitIntervalSec = how many times to fail starting before exiting default 10
@@ -56,13 +60,13 @@ WorkingDirectory=/home/ktl
 Restart=always
 RestartSec=2.5
 User=ktl
-ExecStart=/home/ktl/startLED.sh
+ExecStart=/home/ktl/PiScreen/startLED.sh
 
 [Install]
-WantedBy=multi-user.target"
+WantedBy=multi-user.target
 EOF
 
-echo "=== 10) Enabling and Starting Service ==="
+echo "=== 11) Enabling and Starting Service ==="
 sudo systemctl daemon-reload
 systemctl start PiDisplay
 systemctl enable PiDisplay
