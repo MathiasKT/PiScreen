@@ -37,7 +37,7 @@ echo "=== 7) Installing rgbmatrix into venv ==="
 
 #sudo PIP_BREAK_SYSTEM_PACKAGES=1 python3 -m pip install .
 echo "=== 8) Make startLED.sh executable ==="
-sudo chmod +x /home/ktl/PIScreen/startLED.sh
+sudo chmod +x /home/ktl/PiScreen/startLED.sh
 
 echo "=== 9) Creating System services ==="
 # After = network connected
