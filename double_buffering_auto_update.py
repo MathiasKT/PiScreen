@@ -70,6 +70,7 @@ def play_media(path,prev_ctime):
 					cap.release()
 					return
 				last_check_time =  start_time
+				time.sleep(0.005)
 
 			
 			ret, frame = cap.read()

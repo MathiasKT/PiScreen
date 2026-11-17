@@ -3,3 +3,9 @@
 2. fix screen tearing for images 
 3. update default link, ask 
 4. restructure to allow for videos?
+
+
+
+
+3)
+chromiums cdp screencast (no polling / png encoding)
