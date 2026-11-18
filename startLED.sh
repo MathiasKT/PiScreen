@@ -38,7 +38,7 @@ start_scroller() {
     IP=$(hostname -I | awk '{print $1}')
     (
         cd /home/ktl/rpi-rgb-led-matrix/examples-api-use/ || exit 1
-        exec sudo ./scrolling-text-example -s 1 -f ../fonts/8x13.bdf \
+        exec sudo ./scrolling-text-example -s 4 -f ../fonts/8x13.bdf \
             --led-cols 64 --led-rows 32 --led-no-hardware-pulse \
             --led-slowdown-gpio 4 --led-chains 2 --led-parallel 3 \
             "Awaiting connection, IP: $IP"

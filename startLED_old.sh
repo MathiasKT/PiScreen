@@ -7,7 +7,7 @@ if [ ! -f "$ADOPT_FILE" ]; then
     #display ip and error
     cd /home/ktl/rpi-rgb-led-matrix/examples-api-use/ || exit 1
     IP=$(hostname -I | awk '{print $1}') 
-    sudo ./scrolling-text-example -s 1 -f ../fonts/8x13.bdf --led-cols 64 --led-rows 32 --led-no-hardware-pulse --led-slowdown-gpio 4 --led-chains 2 --led-parallel 3 "Awaiting connection, IP: $IP"
+    sudo ./scrolling-text-example -s 4 -f ../fonts/8x13.bdf --led-cols 64 --led-rows 32 --led-no-hardware-pulse --led-slowdown-gpio 4 --led-chains 2 --led-parallel 3 "Awaiting connection, IP: $IP"
 
      SCROLL_PID=$!
 
