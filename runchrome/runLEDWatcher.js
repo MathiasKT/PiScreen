@@ -115,7 +115,7 @@ if (!fs.existsSync(OUTPUT_DIR)) {
 
         // Keep x newest files
         if (files.length > FILES_TO_KEEP) {
-            files.slice(5).forEach(file => {
+            files.slice(FILES_TO_KEEP).forEach(file => {
                 try {
                     fs.unlinkSync(file);
                     console.log(`Deleted: ${file}`);
